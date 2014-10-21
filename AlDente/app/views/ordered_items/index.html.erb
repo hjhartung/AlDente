@@ -1,0 +1,27 @@
+<h1>Listing ordered_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ordered_items.each do |ordered_item| %>
+      <tr>
+        <td><%= ordered_item.item_id %></td>
+        <td><%= link_to 'Show', ordered_item %></td>
+        <td><%= link_to 'Edit', edit_ordered_item_path(ordered_item) %></td>
+        <td><%= link_to 'Destroy', ordered_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ordered item', new_ordered_item_path %>

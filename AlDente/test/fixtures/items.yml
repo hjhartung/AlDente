@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cost: 9.99
+  category: MyString
+  available: false
+  restaurant_id: 1
+
+two:
+  name: MyString
+  cost: 9.99
+  category: MyString
+  available: false
+  restaurant_id: 1

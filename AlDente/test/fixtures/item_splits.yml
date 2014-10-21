@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ordered_items_id: 1
+  customer_id: 1
+  percentage: 9.99
+  details: MyText
+
+two:
+  ordered_items_id: 1
+  customer_id: 1
+  percentage: 9.99
+  details: MyText
