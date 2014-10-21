@@ -1,0 +1,33 @@
+<%= form_for(@item_split) do |f| %>
+  <% if @item_split.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item_split.errors.count, "error") %> prohibited this item_split from being saved:</h2>
+
+      <ul>
+      <% @item_split.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ordered_items_id %><br>
+    <%= f.number_field :ordered_items_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= f.number_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :percentage %><br>
+    <%= f.text_field :percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br>
+    <%= f.text_area :details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
