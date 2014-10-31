@@ -1,22 +1,24 @@
 class Session < ActiveRecord::Base
+	before_create :createpin
 	belongs_to :restaurant
-    has_many :ordered_items #is this necessary since its an optional relationship
+    has_many :ordered_items 
 
 	validates_presence_of :waiter_name
 	validates_presence_of :ipad_id
 	validates_presence_of :restaurant_id
 	validates_presence_of :user_id
-	validates_presence_of :PIN
-	validates_presence_of :party_size
+	validates_presence_of :pin
+	validates_uniqueness_of :pin
 	validates :party_size { only_integer: true }
 
 	scope :alphabetically, order('waiter_name')
 
 
+	private
 	def createpin (length = 6)
-		chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ123456789'
+		chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
   		p = ''
   		length.times { p << chars[rand(chars.size)] }
-  		p
+  		self.pin=p
 	end
 end	
