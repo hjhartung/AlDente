@@ -5,11 +5,7 @@ AlDente::Application.routes.draw do
 
   resources :restaurants
 
-  resources :item_splits
-
   resources :ordered_items
-  
-  resources :customers
 
   resources :items
 
