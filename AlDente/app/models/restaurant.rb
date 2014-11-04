@@ -2,9 +2,9 @@ class Restaurant < ActiveRecord::Base
 
 	has_many :items
 	has_many :sessions
-	has_many :customers,
+	has_many :customers
     
-	validates_presence_of :name
+    validates :name, presence: true
 	
 	scope :alphabetically, order('name')
 
