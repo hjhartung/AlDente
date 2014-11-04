@@ -5,12 +5,8 @@ AlDente::Application.routes.draw do
 
   resources :restaurants
 
-  resources :item_splits
-
   resources :ordered_items
   
-  resources :customers
-
   resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.
