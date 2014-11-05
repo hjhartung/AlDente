@@ -3,9 +3,8 @@ class Session < ActiveRecord::Base
     has_many :customers
 
 	validates_presence_of :waiter_name
-	validates_presence_of :ipad_id
+	# validates_presence_of :ipad_id
 	validates_presence_of :restaurant_id
-	validates_presence_of :user_id
 	
 	scope :alphabetically, order('waiter_name')
 end
