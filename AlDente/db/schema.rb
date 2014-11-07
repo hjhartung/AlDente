@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104040038) do
+ActiveRecord::Schema.define(version: 20141107005108) do
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141104040038) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "tax_percentage"
+    t.text     "description"
   end
 
   create_table "ordered_items", force: true do |t|
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141104040038) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_confirmation"
   end
 
 end
