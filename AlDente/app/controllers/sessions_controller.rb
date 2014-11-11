@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+    @session = Session.find(params[:id])
+    @ordered_items = @session.ordered_items
   end
 
   # GET /sessions/new

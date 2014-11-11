@@ -10,6 +10,10 @@ class OrderedItemsController < ApplicationController
   # GET /ordered_items/1
   # GET /ordered_items/1.json
   def show
+    @ordered_item = OrderedItem.find(params[:id])
+    # @item = @ordered_item.where(@item.ordered_item, @ordered_item)
+    # @item = Item.where(id => @ordered_item.item_id)
+    @item = Item.find(@ordered_item.item_id)
   end
 
   # GET /ordered_items/new
@@ -69,6 +73,6 @@ class OrderedItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ordered_item_params
-      params.require(:ordered_item).permit(:item_id)
+      params.require(:ordered_item).permit(:item_id, :session_id)
     end
 end
