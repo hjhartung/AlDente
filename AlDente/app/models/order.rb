@@ -13,11 +13,4 @@ class Order < ActiveRecord::Base
 
 	scope :alphabetically, order('waiter_name')
 
-	private
-	def createpin (length = 6)
-		chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
-  		p = ''
-  		length.times { p << chars[rand(chars.size)] }
-  		self.pin=p
-	end
 end	
