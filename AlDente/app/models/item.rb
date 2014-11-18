@@ -1,9 +1,9 @@
 class Item < ActiveRecord::Base
-  #attr_accessible :name, :cost, :category, :available, :restaurant_id
+  #attr_accessible :name, :cost, :category, :available, :restaurant_id, :tax_percentage, :decimal
   
   # Relationships
-  belongs_to :ordered_items
-  belongs_to :customers
+  has_many :ordered_items
+  belongs_to :restaurant
   
   # Scopes
 

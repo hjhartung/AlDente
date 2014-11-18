@@ -1,7 +1,10 @@
 class OrderedItem < ActiveRecord::Base
+    #attr_accessible :session_id, :item_id, :comments
+
 
 	#relationships
 	belongs_to :order
+	belongs_to :item
 
 	#validations
 	validates_presence_of :order_id
