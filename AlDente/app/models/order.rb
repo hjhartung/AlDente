@@ -1,4 +1,4 @@
-class Session < ActiveRecord::Base
+class Order < ActiveRecord::Base
 	before_create :createpin
 	belongs_to :restaurant
     has_many :ordered_items 
