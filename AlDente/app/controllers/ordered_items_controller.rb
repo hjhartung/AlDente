@@ -69,6 +69,6 @@ class OrderedItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ordered_item_params
-      params.require(:ordered_item).permit(:item_id)
+      params.require(:ordered_item).permit(:item_id, :order_id)
     end
 end
