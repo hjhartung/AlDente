@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+
 
 <p>
   <strong>Waiter name:</strong>
@@ -31,7 +34,7 @@
   <tbody>
     <% @ordered_items.each do |ordered_item| %>
       <tr>
-        <td><%= link_to ordered_item.item.name, edit_ordered_item_path(ordered_item) %></td>
+        <td><%= link_to ordered_item.item.name, ordered_item_path(ordered_item) %></td>
         <td><%= link_to 'Show', ordered_item %></td>
         <td><%= link_to 'Destroy', ordered_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
