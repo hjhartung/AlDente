@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
 
 <p>
   <strong>Waiter name:</strong>
@@ -12,7 +15,7 @@
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @session.restaurant_id %>
+  <%= @session.restaurant.name %>
 </p>
 
 <div class="page-header">
@@ -31,7 +34,7 @@
   <tbody>
     <% @ordered_items.each do |ordered_item| %>
       <tr>
-        <td><%= link_to ordered_item.item_id, edit_ordered_item_path(ordered_item) %></td>
+        <td><%= link_to ordered_item.item.name, edit_ordered_item_path(ordered_item) %></td>
         <td><%= link_to 'Show', ordered_item %></td>
         <td><%= link_to 'Destroy', ordered_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -39,5 +42,11 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+<div class="btn-group">
+<button type="button" class="btn btn-default"><%= link_to 'Edit', edit_session_path(@session) %></button>
+</div>
+
+<div class="btn-group">
+<button type="button" class="btn btn-default">
+<%= link_to 'Back', sessions_path %></button>
+</div>

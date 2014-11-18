@@ -17,10 +17,12 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+    @restaurants = Restaurant.all
   end
 
   # GET /sessions/1/edit
   def edit
+    @restaurants = Restaurant.all
   end
 
   # POST /sessions

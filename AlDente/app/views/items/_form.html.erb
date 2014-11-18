@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br>
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -33,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :restaurant_id %><br>
-    <%= f.number_field :restaurant_id %>
+    <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Item:</strong>
-  <%= @ordered_item.item_id %>
-</p>
-
-<p>
-  <strong>Item:</strong>
-  <%= @item.id %>
-</p>
+<br>
+<br>
+<br>
 
 <p>
   <strong>Name:</strong>
@@ -32,7 +25,7 @@
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @item.restaurant_id %>
+  <%= @item.restaurant.name %>
 </p>
 
 <%= link_to 'Edit', edit_ordered_item_path(@ordered_item) %> |
