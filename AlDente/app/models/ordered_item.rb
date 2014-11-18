@@ -10,5 +10,5 @@ class OrderedItem < ActiveRecord::Base
 	validates :item_id, numericality: { only_integer: true, :greater_than_or_equal_to => 0 }
 
 	#scope
-	scope :by_order where('order_id = ?', :order_id)
+	#scope :by_order where('order_id = ?', :order_id)
 end
