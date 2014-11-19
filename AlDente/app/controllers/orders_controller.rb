@@ -12,11 +12,13 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @ordered_items = @order.ordered_items
+    # @ordered_item = Ordered_item.new
   end
 
   # GET /orders/new
   def new
     @order = Order.new
+    @order.ordered_items.build
   end
 
   # GET /orders/1/edit
@@ -30,7 +32,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'order was successfully created.' }
+        format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
@@ -44,7 +46,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'order was successfully updated.' }
+        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,6 +73,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:waiter_name, :ipad_id, :restaurant_id, :user_id)
+      params.require(:order).permit(:waiter_name, :ipad_id, :restaurant_id, :user_id, ordered_items_attributes: [:id, :order_id, :item_id, :comments])
     end
 end

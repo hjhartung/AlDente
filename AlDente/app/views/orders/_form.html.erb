@@ -23,6 +23,26 @@
     <%= f.label :restaurant_id %><br>
     <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
   </div>
+
+  <div class="span5">
+    <legend>Ordered items for this order</legend>
+      <div id="order_ordered_items">
+        <%= form_for @order do |f| %>
+          Ordered items:
+            <%= f.fields_for :ordered_items do |ordered_items_form| %>
+              <!-- <br> -->
+              <%# ordered_items_form.label :id %><br>
+              <%# ordered_items_form.text_field :id %>
+              
+              <%= ordered_items_form.label :item_id %><br>
+              <%= ordered_items_form.collection_select :item_id, Item.all, :id, :name %>
+            <% end %>
+          </ul>
+        <% end %>
+
+<br>
+<br>
+
   <div class="actions">
     <%= f.submit %>
   </div>
