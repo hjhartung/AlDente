@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :session_id %><br>
+    <%= f.collection_select :session_id, Session.all, :id, :id %>
+  </div>
+  <div class="field">
     <%= f.label :item_id %><br>
-    <%= f.number_field :item_id %>
+    <%= f.collection_select :item_id, Item.all, :id, :name %>
   </div>
     <div class="field">
     <%= f.label :order_id %><br>
     <%= f.number_field :order_id %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

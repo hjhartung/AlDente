@@ -1,8 +1,31 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
 
 <p>
-  <strong>Item:</strong>
-  <%= @ordered_item.item_id %>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @item.cost %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @item.available %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @item.restaurant.name %>
 </p>
 
 <%= link_to 'Edit', edit_ordered_item_path(@ordered_item) %> |
