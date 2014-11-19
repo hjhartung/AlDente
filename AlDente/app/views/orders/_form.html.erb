@@ -24,21 +24,17 @@
     <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
   </div>
 
-  <div class="span5">
+<!--   <div class="span5">
     <legend>Ordered items for this order</legend>
       <div id="order_ordered_items">
-        <%= form_for @order do |f| %>
-          Ordered items:
-            <%= f.fields_for :ordered_items do |ordered_items_form| %>
-              <!-- <br> -->
-              <%# ordered_items_form.label :id %><br>
-              <%# ordered_items_form.text_field :id %>
-              
-              <%= ordered_items_form.label :item_id %><br>
-              <%= ordered_items_form.collection_select :item_id, Item.all, :id, :name %>
-            <% end %>
-          </ul>
-        <% end %>
+        <%# order_form.simple_fields_for :order_items do |order_item_form| %>
+          <%# render :partial => "order_item_fields", :locals => { :f => order_item_form } %>
+        <%# end %> 
+        <p>
+          <br /><%# order_form.link_to_add(raw("<i class='icon-plus icon-white'></i> Add order item"), :order_items, :class => 'btn btn-mini btn-primary') %>
+        </p>
+      </div> 
+    </div>   -->      
 
 <br>
 <br>
