@@ -11,8 +11,6 @@ class OrderedItemsController < ApplicationController
   # GET /ordered_items/1.json
   def show
     @ordered_item = OrderedItem.find(params[:id])
-    # @item = @ordered_item.where(@item.ordered_item, @ordered_item)
-    # @item = Item.where(id => @ordered_item.item_id)
     @item = Item.find(@ordered_item.item_id)
   end
 

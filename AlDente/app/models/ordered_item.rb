@@ -1,5 +1,5 @@
 class OrderedItem < ActiveRecord::Base
-    #attr_accessible :session_id, :item_id, :comments
+    #attr_accessible :order_id, :item_id, :comments
 
 
 	#relationships
@@ -14,4 +14,5 @@ class OrderedItem < ActiveRecord::Base
 
 	#scope
 	#scope :by_order where('order_id = ?', :order_id)
+
 end
