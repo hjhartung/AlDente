@@ -46,3 +46,5 @@
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+<%= link_to 'Add Ordered Item', new_ordered_item_path(:order => @order.id) %>
+
