@@ -10,11 +10,14 @@ AlDente::Application.routes.draw do
   
   resources :items
 
+  resources :sessions
+
   root :to => 'items#index'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get    'logout'  => 'sessions#destroy'
+  # delete 'logout'  => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
