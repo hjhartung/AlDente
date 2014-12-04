@@ -1,3 +1,12 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
-<%= render :partial => "dashboard_menu" %>
+<br>
+<h1><%= @restaurant.name %></h1>
+<div class="row">
+	<div class="col-lg-6">
+		<h2>Orders</h2>
+	  	<%= render :partial => "dashboard_orders" %>
+	</div>
+	<div class="col-lg-6">
+	  	<h2>Menu</h2>
+		<%= render :partial => "dashboard_menu" %>
+	</div>
+</div>
