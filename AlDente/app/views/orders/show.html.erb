@@ -15,7 +15,7 @@
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @order.restaurant_id %>
+  <%= @order.restaurant.name %>
 </p>
 
 <div class="page-header">
@@ -42,5 +42,9 @@
   </tbody>
 </table>
 
+<%# render :partial => "quick_order" %>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+<%= link_to 'Add Ordered Item', new_ordered_item_path(:order => @order.id) %>
+

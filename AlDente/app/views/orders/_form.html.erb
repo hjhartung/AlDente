@@ -23,6 +23,22 @@
     <%= f.label :restaurant_id %><br>
     <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
   </div>
+
+<!--   <div class="span5">
+    <legend>Ordered items for this order</legend>
+      <div id="order_ordered_items">
+        <%# order_form.simple_fields_for :order_items do |order_item_form| %>
+          <%# render :partial => "order_item_fields", :locals => { :f => order_item_form } %>
+        <%# end %> 
+        <p>
+          <br /><%# order_form.link_to_add(raw("<i class='icon-plus icon-white'></i> Add order item"), :order_items, :class => 'btn btn-mini btn-primary') %>
+        </p>
+      </div> 
+    </div>   -->      
+
+<br>
+<br>
+
   <div class="actions">
     <%= f.submit %>
   </div>
