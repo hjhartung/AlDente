@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
 
   def create
     user = User.authenticate(params[:restaurant_id], params[:password])
-    if user
+	if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, :notice => "Logged in!"
+      redirect_to items_path, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
       render "new"
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+
+    redirect_to items_path, :notice => "Logged out!"
   end
 end

@@ -17,6 +17,7 @@ class OrderedItemsController < ApplicationController
   # GET /ordered_items/new
   def new
     @ordered_item = OrderedItem.new
+    @order = Order.find(params[:order])
   end
 
   # GET /ordered_items/1/edit

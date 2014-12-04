@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /users
@@ -70,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:restaurant_id, :role, :active, :password_digest)
+      params.require(:user).permit(:restaurant_id, :role, :active, :password_digest, :password, :password_confirmation)
     end
 end

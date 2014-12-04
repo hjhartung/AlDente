@@ -1,0 +1,22 @@
+<!-- x icon to remove -->
+<%= f.link_to_remove(raw("<i class='icon-remove'></i>")) %>
+<!-- fields -->
+<%= f.fields_for :ordered_items do |ordered_items_form| %>
+  <!-- <br> -->
+  <%# ordered_items_form.label :id %><br>
+  <%# ordered_items_form.text_field :id %>
+
+  <%= ordered_items_form.label :item_id %><br>
+  <%= ordered_items_form.collection_select :item_id, Item.all, :id, :name %>
+
+
+
+
+<div class="fields">
+  <div class="min_order_items">
+    <!-- x icon to remove -->
+    <%= f.link_to_remove(raw("<i class='icon-remove'></i>")) %>
+    <!-- fields -->
+    <%= f.input :item_id %>
+  </div>
+</div>
