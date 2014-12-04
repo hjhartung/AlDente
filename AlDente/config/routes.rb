@@ -1,4 +1,5 @@
 AlDente::Application.routes.draw do
+  get "home/dashboard"
   get "sessions/new"
   resources :users
 
@@ -12,9 +13,12 @@ AlDente::Application.routes.draw do
 
   root :to => 'items#index'
 
+  get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get 'logout'  => 'sessions#destroy'
+
+  get 'dashboard' => 'home#dashboard'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
