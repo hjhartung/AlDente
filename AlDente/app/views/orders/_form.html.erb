@@ -19,11 +19,17 @@
     <%= f.label :ipad_id %><br>
     <%= f.number_field :ipad_id %>
   </div>
+  <% if logged_in? %>
+        <%= f.hidden_field :restaurant_id, :value => current_user.restaurant_id%>
+      <% else %>
+        <div class="field">
+          <%= f.label :restaurant_id %><br>
+          <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+        </div>
+      <% end %>s
   <div class="field">
-    <%= f.label :restaurant_id %><br>
-    <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+    <%= f.hidden_field :paid, :value => false %> <!--Delia Look-->
   </div>
-
 <!--   <div class="span5">
     <legend>Ordered items for this order</legend>
       <div id="order_ordered_items">
