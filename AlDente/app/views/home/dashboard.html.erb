@@ -1,3 +1,14 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
+<br>
+<br>
+
+<h1>Dashboard</h1>
+<% if current_user %>
+Welcome, <%= current_user.restaurant.name %> user.
+<% else %>
+Welcome.
+<% end %>
+
+<br>
+<br>
+
 <%= render :partial => "dashboard_menu" %>
