@@ -1,24 +1,23 @@
+<%= form_for(:session, url: login_path) do |f| %>
+	<% provide(:title, "Log in") %>
+	<h1>Log in</h1>
 
-<br>
-<br>
+	<div class="row">
+	  <div class="col-md-6 col-md-offset-3">
+	    <%= form_for(:session, url: login_path) do |f| %>
 
-<h3>Log In</h3>
+	     	<div class="field">
+    			<%= f.label :restaurant_id %><br>
+    			<%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+ 			 	</div>
 
-<%= form_tag sessions_path do %>
+	      <%= f.label :password %>
+	      <%= f.password_field :password, class: 'form-control' %>
 
-	<div class="control-group">
-    <%= label_tag :restaurant_id %>
-    <div class="controls">
-      <%= text_field_tag :restaurant_id, params[:restaurant_id] %>
-    </div>
-  </div>
+	      <%= f.submit "Log in", class: "btn btn-primary" %>
+	    <% end %>
 
-	<div class="control-group">
-    <%= label_tag :password %>
-    <div class="controls">
-      <%= password_field_tag :password %>
-    </div>
-  </div>
-
-  <div class="actions"><%= submit_tag "Log In" %></div>
+	    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+	  </div>
+	</div>
 <% end %>
