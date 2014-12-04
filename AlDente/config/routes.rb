@@ -3,7 +3,7 @@ AlDente::Application.routes.draw do
   get "home/dashboard"
 
   get "sessions/new"
-  
+
   resources :users
 
   resources :orders
@@ -13,6 +13,8 @@ AlDente::Application.routes.draw do
   resources :ordered_items
   
   resources :items
+
+  resources :sessions
 
   root :to => 'items#index'
 
