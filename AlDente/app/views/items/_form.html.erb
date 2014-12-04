@@ -12,10 +12,14 @@
   <% end %>
 
   <div class="field">
-  <div class="field">
-    <%= f.label :restaurant_id %><br>
-    <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
-  </div>
+  <% if logged_in? %>
+          <%= f.hidden_field :restaurant_id, :value => current_user.restaurant_id%>
+        <% else %>
+          <div class="field">
+            <%= f.label :restaurant_id %><br>
+            <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+          </div>
+        <% end %>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
