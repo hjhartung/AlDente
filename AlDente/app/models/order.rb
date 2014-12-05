@@ -13,5 +13,8 @@ class Order < ActiveRecord::Base
 	# validates :party_size { only_integer: true }
 
 	scope :alphabetically, order('waiter_name')
+	scope :chronologically, order(:created_at)
+	scope :paid, where(paid: true)
+	scope :unpaid, where(paid: false)
 
 end	

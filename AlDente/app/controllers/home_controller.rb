@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   	if current_user
   		@restaurant = Restaurant.find(current_user.restaurant_id)
  	    @items = @restaurant.items
-    	@orders = @restaurant.orders
+    	@unpaid_orders = @restaurant.orders.unpaid
+    	@paid_orders = @restaurant.orders.paid
     else
    	end
   end

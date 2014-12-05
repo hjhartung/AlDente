@@ -3,8 +3,11 @@
 	<h1><%= @restaurant.name %></h1>
 	<div class="row">
 		<div class="col-lg-6">
-			<h2>Orders</h2>
+			<h2>Unpaid Orders</h2>
 		  	<%= render :partial => "dashboard_orders" %>
+		  	<br>
+		  	<h2>Paid Orders</h2>
+		  	<%= render :partial => "dashboard_paid_orders" %>
 		</div>
 		<div class="col-lg-6">
 		  	<h2>Menu</h2>
