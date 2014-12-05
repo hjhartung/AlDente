@@ -1,0 +1,51 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :waiter_name %><br>
+    <%= f.text_field :waiter_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ipad_id %><br>
+    <%= f.number_field :ipad_id %>
+  </div>
+  <% if logged_in? %>
+        <%= f.hidden_field :restaurant_id, :value => current_user.restaurant_id%>
+      <% else %>
+        <div class="field">
+          <%= f.label :restaurant_id %><br>
+          <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+        </div>
+      <% end %>s
+  <div class="field">
+    <%= f.hidden_field :paid, :value => false %> <!--Delia Look-->
+  </div>
+<!--   <div class="span5">
+    <legend>Ordered items for this order</legend>
+      <div id="order_ordered_items">
+        <%# order_form.simple_fields_for :order_items do |order_item_form| %>
+          <%# render :partial => "order_item_fields", :locals => { :f => order_item_form } %>
+        <%# end %> 
+        <p>
+          <br /><%# order_form.link_to_add(raw("<i class='icon-plus icon-white'></i> Add order item"), :order_items, :class => 'btn btn-mini btn-primary') %>
+        </p>
+      </div> 
+    </div>   -->      
+
+<br>
+<br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

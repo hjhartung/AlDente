@@ -12,12 +12,28 @@
   <% end %>
 
   <div class="field">
+  <% if logged_in? %>
+          <%= f.hidden_field :restaurant_id, :value => current_user.restaurant_id%>
+        <% else %>
+          <div class="field">
+            <%= f.label :restaurant_id %><br>
+            <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+          </div>
+        <% end %>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
     <%= f.label :cost %><br>
     <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :tax_percentage %><br>
+    <%= f.text_field :tax_percentage %>
   </div>
   <div class="field">
     <%= f.label :category %><br>
@@ -26,10 +42,6 @@
   <div class="field">
     <%= f.label :available %><br>
     <%= f.check_box :available %>
-  </div>
-  <div class="field">
-    <%= f.label :restaurant_id %><br>
-    <%= f.number_field :restaurant_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,13 +1,35 @@
 <p id="notice"><%= notice %></p>
 
+</br></br>
+
+<p>
+  <strong>ID:</strong>
+  <%= @item.id %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @item.restaurant.name %>
+</p>
+
 <p>
   <strong>Name:</strong>
   <%= @item.name %>
 </p>
 
 <p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
   <strong>Cost:</strong>
   <%= @item.cost %>
+</p>
+
+<p>
+  <strong>Tax Percentage:</strong>
+  <%= @item.tax_percentage %>
 </p>
 
 <p>
@@ -18,11 +40,6 @@
 <p>
   <strong>Available:</strong>
   <%= @item.available %>
-</p>
-
-<p>
-  <strong>Restaurant:</strong>
-  <%= @item.restaurant_id %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
