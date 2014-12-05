@@ -11,7 +11,7 @@ json.order do
 		json.item do 
 			json.id ordered_item.item
 			json.name ordered_item.item.name
-			json.cost number_to_currency ordered_item.item.cost
+			json.cost ordered_item.item.cost
 			json.category ordered_item.item.category
 		end
 	end
