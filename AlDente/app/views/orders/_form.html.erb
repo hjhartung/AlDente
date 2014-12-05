@@ -26,7 +26,7 @@
           <%= f.label :restaurant_id %><br>
           <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
         </div>
-      <% end %>s
+      <% end %>
   <div class="field">
     <%= f.hidden_field :paid, :value => false %> <!--Delia Look-->
   </div>
