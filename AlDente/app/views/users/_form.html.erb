@@ -17,6 +17,10 @@
     <%= collection_select(:user, :restaurant_id, Restaurant.all, :id, :name) %>
   </div>
   <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
     <%= f.label :role %><br>
     <%= f.text_field :role %>
   </div>
