@@ -26,9 +26,10 @@
           <%= f.label :restaurant_id %><br>
           <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
         </div>
-      <% end %>s
+      <% end %>
   <div class="field">
-    <%= f.hidden_field :paid, :value => false %> <!--Delia Look-->
+    <%= f.label :paid %><br>
+    <%= f.check_box :paid, :checked => false %> <!--Delia Look-->
   </div>
 <!--   <div class="span5">
     <legend>Ordered items for this order</legend>
