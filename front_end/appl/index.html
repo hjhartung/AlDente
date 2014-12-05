@@ -1,0 +1,159 @@
+<html>
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../shared/reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../shared/font-awesome-4.2.0/css/font-awesome.min.css">
+
+  <script src="../shared/jquery.min.js" ></script>
+  <script src="../shared/slider.js" ></script>
+  <script src="../shared/vertical_center.js" ></script>
+  <script src="main.js" ></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    
+  <div id="slider">
+    <div> <!-- slider wrapper -->
+        <div class="side"> <!-- pin screen -->
+        
+          <div id="num-input-main-contents">
+            <div id="num-input-instructions">Enter your pin</div>
+            <div id="pin-input-container">
+              <input type="text" id="pin-input" autofocus onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            </div>
+            <div id="num-input-submit-button" class="disabled">continue</div>
+          </div>
+
+        </div>
+        <div class="side"> <!-- name screen -->
+         
+          <div id="name-input-main-contents">
+            <div id="name-input-instructions">Enter your name</div>
+            <div id="name-input-container">
+              <input type="text" id="name-input">
+            </div>
+            <div id="name-input-submit-button" class="disabled">continue</div>
+          </div>
+        </div>
+
+        <div class="side"> <!-- items screen  -->
+          <div id="selection-view">
+            <div id="selection-view-top">
+              <img id="selection-view-logo" src="../shared/images/logo.jpg">
+              <div id="selection-view-top-stuff">
+                <div id="selection-view-instructions">
+                    <div>Tap to select</div>
+                    <div>Tap again to deselect</div>
+                  </div>
+                  <div id="selection-view-selectall">
+                    <span>Select all</span>
+                    <i class="fa fa-check selection-view-selectall-check"></i>
+                    <!-- <input id="selection-selectall-check" type="checkbox"> -->
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+              <div id="selection-view-top-info">
+                <span id="selection-view-table-num">Table <span id="table-num">7</span>'s Bill</span>
+                <span id="selection-view-restaurant-name">Fuel and Fuddle</span>
+              </div>
+            </div>
+            <div id="selection-view-middle">
+              <div id="selection-items">
+              </div>
+            </div>
+            <div id="selection-view-bottom">
+              <div id="selection-view-totals">
+                <div id="selection-view-total-labels">
+                  <div id="selection-view-subtotal-label">Subtotal</div>
+                  <div id="selection-view-tax-label">Tax</div>
+                  <div id="selection-view-tip-label">Tip</div>
+                  <div id="selection-view-total-label">Total</div>
+                </div>
+                <div id="selection-view-total-amounts">
+                  <div id="selection-view-subtotal-amount">$0.00</div>
+                  <div id="selection-view-tax-amount">$0.00</div>
+                  <div id="selection-view-tip-amount">$0.00</div>
+                  <div id="selection-view-total-amount">$0.00</div>
+                </div>
+                <div id="tip-amount-container">
+                  <input type="number" name="" value="15" min="0" max="999" id="tip-amount">
+                  <span>%</span>
+                </div>
+                <hr>
+                <div class="clearfix"></div>
+              </div>
+              <div id="selection-view-submit-button-container">
+                <div id="selection-view-submit-button" class="disabled">Submit</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="side">  <!-- payment selection screen -->
+          <div id="payment-options-container">
+          <h1>Please select your preferred payment method:</h1>
+            <div class="payment-options">
+              <div class="payment-option payment-option-card">
+                <i class="fa fa-credit-card"></i>
+                <span>Credit Card</span>
+              </div>
+              <div class="payment-option payment-option-paypal">
+                <i class="fa fa-paypal"></i>
+                <span>Paypal</span>
+              </div>
+              <div class="payment-option payment-option-cash">
+                <i class="fa fa-usd"></i>
+                <span>Cash</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="side">  <!-- payment screen -->
+          <div id="payments-container">
+            <div class="payment-methods">
+              <div class="payment-method payment-method-card invisible">
+                <div class="credit-card-info">
+                  <input type="text" class="credit-card-name" placeholder="Name on Card">
+                  <input type="text" class="credit-card-number" placeholder="Credit Card Number" maxlength="16">
+                  <input class="credit-card-month" type="text" placeholder="MM" maxlength="2">
+                  <input class="credit-card-year" type="text" placeholder="YY" maxlength="2">
+                  <input class="credit-card-csc" type="text" placeholder="CSC" maxlength="3">
+                  <div class="credit-card-security-notice">
+                    <i class="fa fa-cc-stripe"></i>
+                    <span>Secured by Stripe</span>
+                  </div>
+                  <div id="credit-card-submit-button" class="disabled">submit</div>
+                </div>
+              </div>
+              <div class="payment-method payment-method-paypal invisible">
+                <!-- <i class="fa fa-paypal"></i> -->
+                <span>Paypal</span>
+              </div>
+              <div class="payment-method payment-method-cash invisible">
+                <!-- <i class="fa fa-usd"></i> -->
+                <div class="payment-method-cash-text">
+                  <span>Your waiter has been notified that you will be paying with cash!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="payment-success-view invisible">
+            <div class="payment-success-view-container">
+              <i class="fa fa-check-circle"></i>
+              <div>Payment Successful!</div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div> <!-- /slider wrapper -->
+  </div>
+
+  </div>  
+
+
+</body>
+</html>

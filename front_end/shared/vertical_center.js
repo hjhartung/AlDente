@@ -6,7 +6,6 @@
 
   $(window).on('resize', function() {
     actives.forEach(function(data) {
-      console.log('here')
       verticalAlign(data['$el'], data['offset']);
     });
   });
@@ -19,7 +18,6 @@
         parentHeight = $parent.height();
 
     var top = (parentHeight / 2) - (height / 2) + offset;
-    console.log('top: '+top);
 
     $el.css('top', top+'px');
 
