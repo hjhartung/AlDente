@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
   def dashboard
-  	@restaurant = Restaurant.find(current_user.restaurant_id)
-    @items = @restaurant.items
-    @orders = @restaurant.orders
+  	if current_user
+  		@restaurant = Restaurant.find(current_user.restaurant_id)
+ 	    @items = @restaurant.items
+    	@orders = @restaurant.orders
+    else
+   	end
   end
 end
